@@ -1,8 +1,11 @@
+### Get all products
 GET http://localhost:5000/api/v1/products
-Content-Type: application/json
+
+### Fetch product by ID
+GET http://localhost:5000/api/v1/products/60d24b29c8e0734264bed8ce
 
 
-###
+### Create product
 POST http://localhost:5000/api/v1/products
 Content-Type: application/json
 
@@ -13,8 +16,8 @@ Content-Type: application/json
     "price": 50
 }
 
-###
-PUT http://localhost:5000/api/v1/products/60d00dbc5f5fb60850cebc4e
+### Update product
+PUT http://localhost:5000/api/v1/products/60d24b29c8e0734264bed8ce
 Content-Type: application/json
 
 {
@@ -23,3 +26,16 @@ Content-Type: application/json
     "variation": "green",
     "price": 50
 }
+
+### Add review
+PUT http://localhost:5000/api/v1/products/review/60d24b29c8e0734264bed8ce
+Content-Type: application/json
+
+{
+    "userID": "0917823071301987",
+    "username": "John Doe",
+    "message": "Wow! It's round!"
+}
+
+### Delete product
+DELETE http://localhost:5000/api/v1/products/60d00dd25f5fb60850cebc51
