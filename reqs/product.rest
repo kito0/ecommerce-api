@@ -1,0 +1,25 @@
+GET http://localhost:5000/api/v1/products
+Content-Type: application/json
+
+
+###
+POST http://localhost:5000/api/v1/products
+Content-Type: application/json
+
+{
+    "name": "circle",
+    "description": "it's round",
+    "variation": "blue",
+    "price": 50
+}
+
+###
+PUT http://localhost:5000/api/v1/products/60d00dbc5f5fb60850cebc4e
+Content-Type: application/json
+
+{
+    "name": "circle",
+    "description": "it's round",
+    "variation": "green",
+    "price": 50
+}
