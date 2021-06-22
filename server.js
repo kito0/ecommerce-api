@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 
-// route imports
 const productsRoute = require('./routes/product.route');
 
 const app = express();
@@ -22,5 +21,4 @@ mongoose
 
 app.use(express.json());
 
-// routes
 app.use('/api/v1/products', productsRoute);
