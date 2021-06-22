@@ -9,17 +9,57 @@ const productSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	variation: {
-		type: String,
-		required: true,
-	},
-	price: {
+	sizes: [
+		{
+			size: {
+				type: String,
+				required: true,
+			},
+			price: {
+				type: Number,
+				required: true,
+			},
+		},
+	],
+	colors: [
+		{
+			color: {
+				type: String,
+				required: true,
+			},
+			price: {
+				type: Number,
+				required: true,
+			},
+		},
+	],
+	variations: [
+		{
+			variationType: {
+				type: String,
+				required: true,
+			},
+			variation: {
+				type: String,
+				required: true,
+			},
+			price: {
+				type: Number,
+				required: true,
+			},
+		},
+	],
+	basePrice: {
 		type: Number,
 		required: true,
 	},
 	reviews: [
 		{
-			accountID: {
+			userID: {
+				type: String,
+				required: true,
+			},
+			username: {
 				type: String,
 				required: true,
 			},
