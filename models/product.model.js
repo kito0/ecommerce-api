@@ -9,6 +9,26 @@ const productSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	price: {
+		type: Number,
+		required: true,
+	},
+	images: [
+		{
+			img: {
+				type: String,
+				required: true,
+			},
+		},
+	],
+	tags: [
+		{
+			tag: {
+				type: String,
+				required: true,
+			},
+		},
+	],
 	sizes: [
 		{
 			size: {
@@ -49,10 +69,6 @@ const productSchema = new mongoose.Schema({
 			},
 		},
 	],
-	basePrice: {
-		type: Number,
-		required: true,
-	},
 	reviews: [
 		{
 			userID: {

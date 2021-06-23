@@ -1,4 +1,5 @@
 const Product = require('../models/product.model');
+const multer = require('multer');
 
 // GET http://localhost:5000/api/v1/products
 exports.getAllProducts = async (req, res) => {
@@ -36,6 +37,25 @@ exports.editProduct = async (req, res) => {
 				: res.status(404).send('Product does not exist');
 		})
 		.catch((err) => res.status(500).send(err));
+};
+
+// PUT http://localhost:5000/api/v1/products/:id
+exports.addImage = async (req, res) => {
+	Product.findByIdAndUpdate(
+		req.params.id,
+		{
+			$push: {
+				images: {
+					img: req.img,
+				},
+			},
+		},
+		{ new: true }
+	)
+		.then((product) => {
+			res.status(201).json(product);
+		})
+		.catch((err) => res.status(400).send(err));
 };
 
 // PUT http://localhost:5000/api/v1/products/:id
