@@ -12,7 +12,6 @@ Content-Type: application/json
 {
     "name": "circle",
     "description": "it's round",
-    "variation": "blue",
     "price": 50
 }
 
